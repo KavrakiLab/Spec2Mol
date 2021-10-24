@@ -20,4 +20,21 @@ conda install rdkit -c rdkit
 conda install pytorch=1.6.0 torchvision -c pytorch
 ```
 
+## Generate spectra embeddings:
 
+```bash
+python predict_embs.py -pos_low_file 'sample_data/[M+H]_low.csv' \
+                     -pos_high_file 'sample_data/[M+H]_high.csv' \
+                     -neg_low_file 'sample_data/[M-H]_low.csv' \
+                     -neg_high_file 'sample_data/[M-H]_high.csv' \
+```
+
+where `pos_low_file`, `pos_high_file`, `neg_low_file`, `neg_high_file` are the csv files with the four input spectra:
+`pos_low_file`: precursor [M+H]+, energy 35% NCE (Normalized Collision Energy)
+`pos_high_file`: precursor [M+H]+, energy 130\% NCE
+`neg_low_file`: precursor [M-H]-, energy 35\% NCE 
+`neg_high_file`: precursor [M-H]-, energy 130\% NCE 
+
+Each csv file has the m/z values in the first column and the intensity values in the second column.
+The columns are separated with commas.
+See file `sample_data`.

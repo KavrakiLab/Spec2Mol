@@ -67,6 +67,7 @@ def spec2tuples(spectrum):
         set of tuples (mass, intensity)
     """
     tuples = set()
+
     for peak in spectrum.split('\n'):
         mass, abund, *c = peak.split(' ')
         mass = float(mass)
@@ -74,11 +75,29 @@ def spec2tuples(spectrum):
         tuples.add((mass,abund))
     return tuples
 
+
+def spec2tuples_fromCSV(spectrum_file):
+    """
+    convert a spectrum stored in a csv file into a set of tuples
+    Args:
+        spectrum_file: spectrum csv file with the first column indicating the m/z ratio and the second column indicating the intensity  (comma separated columns)
+    Output:
+        set of tuples (mass, intensity)
+    """
+    tuples = set()
+    entries = open(spectrum_file).read().split('\n')
+    for i in range(0,len(entries)-1):
+        entry = entries[i].split(',')
+        mass = float(entry[0])
+        abund = float(entry[1])
+        tuples.add((mass,abund))
+    return tuples
+
 def remove_large(spectrum):
     remove = False
     for (mass,abund) in spectrum:
         mass = float(mass)
-        if mass > 600:
+        if mass > 500:
             remove=True
     return remove
 
