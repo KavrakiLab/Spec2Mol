@@ -8,7 +8,7 @@ from torch import optim
 import numpy as np
 
 from model1D2Conv import Net1D
-from data_4channels import *
+from dataset import MSDataset_4channels
 from utils import *
 import queue
 
@@ -51,8 +51,6 @@ def train(args, train_loader, valid_loader, model, epochs):
         valid_queue.put(valid_loss)
         if epoch>4:
             early_stopping(list(valid_queue.queue))
-        if epoch==5 and valid_loss>28:
-            sys.exit('High valid loss!')
     return model
 
 def early_stopping(losses):
@@ -69,7 +67,7 @@ def early_stopping(losses):
     if losses[1]>losses[0]:
         counter = counter + 1
     if counter > 4:
-        sys.exit('Overfitting!')
+        sys.exit('Loss increasing!')
     return
 
 
