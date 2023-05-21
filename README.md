@@ -43,3 +43,19 @@ where `pos_low_file`, `pos_high_file`, `neg_low_file`, `neg_high_file` are the c
 Each csv file has the m/z values in the first column and the intensity values in the second column.
 The columns are separated with commas.
 See file `sample_data`.
+
+## Dataset
+The spectra encoder has been trained on the [NIST Tandem Mass Spectral Library
+2020](https://chemdata.nist.gov/dokuwiki/lib/exe/fetch.php?media=chemdata:asms2020:xiaoyu_yang_asms2020_presentation.pdf) which is a commercial dataset.
+
+
+## Citation
+
+```
+@article{metatrans,
+  author = {Litsa, Eleni E. and Chenthamarakshan, Vijil and Das, Payel and Kavraki, Lydia E.},
+  title = {Spec2Mol: An end-to-end deep learning framework for translating mass spectra to de-novo molecules},
+  journal = {Communications Chemistry},
+  year = {2023},
+}
+```
