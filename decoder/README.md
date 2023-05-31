@@ -33,5 +33,4 @@ python -m scripts.decode_embeddings --output_file decoded_output.csv \
 
 `num_variants`: The number of SMILES strings to generate for each embeddings.
 
-
-
+We would like to thank the Moses project https://github.com/molecularsets/moses. The translation model code has been modified from this project.
