@@ -16,7 +16,7 @@ def main(args):
     maxmass = 499.97
     resolution = 2
 
-    model_dir = 'spectra_encoder_trained_model_200_epochs.pt'
+    model_dir = 'spectra_encoder.pt'
 
     # pos_low_file = 'sample_data/[M+H]_low.csv'
     # pos_high_file = 'sample_data/[M+H]_high.csv'
