@@ -54,7 +54,7 @@ The spectra encoder has been trained on the [NIST Tandem Mass Spectral Library
 ```
 @article{metatrans,
   author = {Litsa, Eleni E. and Chenthamarakshan, Vijil and Das, Payel and Kavraki, Lydia E.},
-  title = {Spec2Mol: An end-to-end deep learning framework for translating mass spectra to de-novo molecules},
+  title = {An end-to-end deep learning framework for translating mass spectra to de-novo molecules},
   journal = {Communications Chemistry},
   year = {2023},
 }
